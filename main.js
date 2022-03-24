@@ -187,4 +187,4 @@ app.use(bodyParser.json());
 app.post('/', bot.webhookCallback);
 
 app.listen(process.env.PORT || 5000, () => console.log('Server is running ... '));
-setInterval(function () { app.get('http://bot-antidep.herokuapp.com/'); }, 300000);
+setInterval(function () { app.get('https://git.heroku.com/bor-antidep.git'); }, 300000);
