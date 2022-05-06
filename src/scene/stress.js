@@ -28,45 +28,45 @@ const stress = new Scene('stress',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №1:' + '\n' + 'Пожалуй, я человек нервный', null, STRESS_BUTTONS);
-        sex = determineSex(ctx.message.body);
+        sex = determineSex(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №2:' + '\n' + 'Я очень беспокоюсь о своей работе', null, STRESS_BUTTONS);
-        counter += determineStressResponse(ctx.message.body);
+        counter += determineStressResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №3:' + '\n' + 'Я часто ощущаю нервное напряжение', null, STRESS_BUTTONS);
-        counter += determineStressResponse(ctx.message.body);
+        counter += determineStressResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №4:' + '\n' + 'Моя повседневная деятельность вызывает большое напряжение', null, STRESS_BUTTONS);
-        counter += determineStressResponse(ctx.message.body);
+        counter += determineStressResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №5:' + '\n' + 'Общаясь с людьми, я часто ощущаю нервное напряжение', null, STRESS_BUTTONS);
-        counter += determineStressResponse(ctx.message.body);
+        counter += determineStressResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №6:' + '\n' + 'К концу дня я совершенно истощен физически и психически', null, STRESS_BUTTONS);
-        counter += determineStressResponse(ctx.message.body);
+        counter += determineStressResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №7:' + '\n' + 'В моей семье часто возникают напряженные отношения', null, STRESS_BUTTONS);
-        counter += determineStressResponse(ctx.message.body);
+        counter += determineStressResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.leave();
-        counter += determineStressResponse(ctx.message.body);
+        counter += determineStressResponse(ctx.message.text);
         var result = (counter / 7).toFixed(2);
         var choice = checkStress(sex, result);
         var sanity = determineSanity('stress', choice);
-        updateResult(ctx.message.user_id, 'stress', result, sanity);
+        updateResult(ctx.message.from_id, 'stress', result, sanity);
         ctx.reply('Вы набрали: ' + result + '\n' +
         checkChoice(4, choice) + '\n' +
             '\n' +

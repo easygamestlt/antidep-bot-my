@@ -1,7 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const VkBot = require('node-vk-bot-api');
+
+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+const serviceAccount = require("./serviceAccountKey.json");
+
+const firebaseapp = initializeApp({
+    credential: cert(serviceAccount),
+    databaseURL: "https://antidepbot-default-rtdb.europe-west1.firebasedatabase.app"
+})
+module.exports = firebaseapp;
+
 const mongoose = require("mongoose");
+
 const {createResult} = require("./src/repository/ResultRepository");
 const Stage = require('node-vk-bot-api/lib/stage')
 const Session = require('node-vk-bot-api/lib/session');
@@ -30,31 +42,19 @@ const feedback = require("./src/scene/feedback");
 let feedback_records = [];
 
 let bot;
+
 if (process.env.VK_TOKEN) {
     bot = new VkBot({
         token: process.env.VK_TOKEN,
         confirmation: process.env.CONFIRM_KEY
     });
-
-    mongoose.connect(process.env.DB_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }).then(() => console.log('MongoDB was connected'))
-        .catch((err) => console.log(err));
-
-} else {
+}
+else {
     const config = require('./src/config.json');
     bot = new VkBot({
         token: config.VK_TOKEN,
         confirmation: config.CONFIRM_KEY
     });
-
-    mongoose.connect(process.env.DB_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }).then(() => console.log('MongoDB was connected'))
-        .catch((err) => console.log(err));
-
 }
 
 const app = express();
@@ -76,8 +76,8 @@ const stage = new Stage(
     temper,
     eysenck,
     feedback,
-);
-
+    );
+    
 bot.use(session.middleware())
 bot.use(stage.middleware())
 
@@ -102,13 +102,13 @@ bot.event('group_join', (msg) => {
 });
 
 bot.command(['help', 'Help'], (ctx) => {
-    bot.sendMessage(ctx.message.user_id, 'Список доступных команд: ' + '\n' +
+    bot.sendMessage(ctx.message.from_id, 'Список доступных команд: ' + '\n' +
         'start – начать взаимодействие с ботом' + '\n' +
         'feedback – оставить пожелание для модификации');
 });
 
 bot.command(['Помощь', 'помощь'], (ctx) => {
-    bot.sendMessage(ctx.message.user_id, 'Список доступных команд: ' + '\n' +
+    bot.sendMessage(ctx.message.from_id, 'Список доступных команд: ' + '\n' +
         'start – начать взаимодействие с ботом' + '\n' +
         'feedback – оставить пожелание для модификации');
 });
@@ -123,7 +123,7 @@ bot.command('Главное меню', (ctx) => {
 
 bot.command(['Start', 'start', 'старт', 'Старт'], (ctx) => {
     ctx.reply('Здравствуйте, вы бы хотели пройти тестирование или связаться со специалистом?', null, DEFAULT_BUTTONS);
-    createResult(ctx.message.user_id);
+    // createResult(ctx.message.from_id);
 });
 
 bot.command('admin', (ctx) => {
@@ -149,8 +149,8 @@ bot.command('Получить помощь', (ctx) => {
 
 bot.command('Тревожность', (ctx) => {
     ctx.reply('Сделайте более конкретный выбор:' + '\n' +
-        'Реактивная тревожность – тревожность, как состояние' + '\n' +
-        'Личностная тревожность – тревожность, как свойство личности', null, ANXIETY_BUTTONS);
+    'Реактивная тревожность – тревожность, как состояние' + '\n' +
+    'Личностная тревожность – тревожность, как свойство личности', null, ANXIETY_BUTTONS);
 });
 
 bot.command('Пожелания', (ctx) => {
@@ -161,30 +161,30 @@ bot.command('Пожелания', (ctx) => {
 });
 
 bot.command('Татьяна Чапала', (ctx) => {
-    bot.sendMessage(ctx.message.user_id, contacts[0][0]);
+    bot.sendMessage(ctx.message.from_id, contacts[0][0]);
 });
 bot.command('Мария Илич', (ctx) => {
-    bot.sendMessage(ctx.message.user_id, contacts[1][0]);
+    bot.sendMessage(ctx.message.from_id, contacts[1][0]);
 });
 bot.command('Юлия Петрова', (ctx) => {
-    bot.sendMessage(ctx.message.user_id, contacts[2][0]);
+    bot.sendMessage(ctx.message.from_id, contacts[2][0]);
 });
 bot.command('Оксана Зотова', (ctx) => {
-    bot.sendMessage(ctx.message.user_id, contacts[3][0]);
+    bot.sendMessage(ctx.message.from_id, contacts[3][0]);
 });
 bot.command('Алина Гельметдинова', (ctx) => {
-    bot.sendMessage(ctx.message.user_id, contacts[4][0]);
+    bot.sendMessage(ctx.message.from_id, contacts[4][0]);
 });
 
 bot.command('Юлия Галимова', (ctx) => {
-    bot.sendMessage(ctx.message.user_id, contacts[5][0]);
+    bot.sendMessage(ctx.message.from_id, contacts[5][0]);
 });
 
-//bot.startPolling()
+// bot.startPolling();
 
 app.use(bodyParser.json());
 
 app.post('/', bot.webhookCallback);
 
-app.listen(process.env.PORT || 5000, () => console.log('Server is running ... '));
+app.listen(process.env.PORT || 3000, () => console.log('Server is running ... '));
 setInterval(function () { app.get('http://bot-antidep.herokuapp.com/'); }, 300000);

@@ -19,10 +19,10 @@ const registration = new Scene('registration',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите свой возраст: ', null, null);
-        if (ctx.message.body == 'M' || ctx.message.body == 'М') {
+        if (ctx.message.text == 'M' || ctx.message.text == 'М') {
             sex = 'male';
         }
-        if (ctx.message.body == 'Ж') {
+        if (ctx.message.text == 'Ж') {
             sex = 'female';
         }
     },
@@ -32,17 +32,17 @@ const registration = new Scene('registration',
             'С – Среднее образование (окончена школа)' + '\n' + 'СС – Среднее Специальное (окончен колледж)' + '\n' +
             'В – Высшее образование' + '\n' + 'М – Магистратура' + '\n' + 'А – Аспирантура' + '\n' +
             'К – Кандидат наук' + '\n' + 'Д – Доктор наук');
-        age = parseInt(ctx.message.body);
+        age = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите семейное положение: ');
-        eduLevel = ctx.message.body;
+        eduLevel = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите социальный статус: ');
-        maritalStatus = ctx.message.body;
+        maritalStatus = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.next();
@@ -63,14 +63,14 @@ const registration = new Scene('registration',
             'Содержание настоящего документа мною прочитано, свое согласие с его содержанием я удостоверяю.' + '\n' +
             formatDate() + '\n' +
             'Если согласны на проведение диагностики – введите \'Да\', если нет – введите \'Нет\'', null, YES_NO_BUTTONS);
-        socialStatus = ctx.message.body;
+        socialStatus = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.leave();
-        if (ctx.message.body == 'Да' ||ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' ||ctx.message.text == 'да') {
             approval = true;
         } else approval = false;
-        createUser(ctx.message.user_id, sex, age, eduLevel, maritalStatus, socialStatus, approval);
+        createUser(ctx.message.from_id, sex, age, eduLevel, maritalStatus, socialStatus, approval);
         ctx.reply('Спасибо за регистрацию!', null, AGREEMENT_BUTTONS);
         sex = 0, age = 0;
     }

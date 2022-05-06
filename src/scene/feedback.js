@@ -9,7 +9,7 @@ const feedback = new Scene('feedback',
     },
     (ctx) => {
         ctx.scene.leave();
-        addFeedback(ctx.message.user_id, ctx.message.body);
+        addFeedback(ctx.message.from_id, ctx.message.text);
         ctx.reply('Спасибо, мы вас услышали!');
     }
 );

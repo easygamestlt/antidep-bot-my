@@ -28,7 +28,7 @@ const inclination = new Scene('inclination',
             '1) Bозможность следить за ходом мыслей автора' + '\n' +
             '2) Художественная форма, мастерство писателя или режиссера' + '\n' +
             '3) Сюжет, действия героев.', null, INCLINATION_BUTTONS);
-        arr[0] = parseInt(ctx.message.body);
+        arr[0] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -36,7 +36,7 @@ const inclination = new Scene('inclination',
             '1) За общественную деятельность' + '\n' +
             '2) В области науки' + '\n' +
             '3) В области искусства', null, INCLINATION_BUTTONS);
-        arr[1] = parseInt(ctx.message.body);
+        arr[1] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -44,7 +44,7 @@ const inclination = new Scene('inclination',
             '1) Главным механиком' + '\n' +
             '2) Начальником экспедиции' + '\n' +
             '3) Главным бухгалтером', null, INCLINATION_BUTTONS);
-        arr[2] = parseInt(ctx.message.body);
+        arr[2] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -52,7 +52,7 @@ const inclination = new Scene('inclination',
             '1) Взаимопонимание между людьми' + '\n' +
             '2) Научные открытия' + '\n' +
             '3) Развитие производства', null, INCLINATION_BUTTONS);
-        arr[3] = parseInt(ctx.message.body);
+        arr[3] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -60,7 +60,7 @@ const inclination = new Scene('inclination',
             '1) Созданием дружного, сплоченного коллектива' + '\n' +
             '2) Разработкой новых технологий обучения' + '\n' +
             '3) Работой с документами', null, INCLINATION_BUTTONS);
-        arr[4] = parseInt(ctx.message.body);
+        arr[4] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -68,7 +68,7 @@ const inclination = new Scene('inclination',
             '1) Внутреннее устройство экспонатов' + '\n' +
             '2) Их практическое применение' + '\n' +
             '3) Внешний вид экспонатов (цвет, форма)', null, INCLINATION_BUTTONS);
-        arr[5] = parseInt(ctx.message.body);
+        arr[5] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -76,7 +76,7 @@ const inclination = new Scene('inclination',
             '1) Дружелюбие и отзывчивость' + '\n' +
             '2) Смелость и выносливость' + '\n' +
             '3) Обязательность и аккуратность', null, INCLINATION_BUTTONS);
-        arr[6] = parseInt(ctx.message.body);
+        arr[6] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -84,7 +84,7 @@ const inclination = new Scene('inclination',
             '1) Ставить различные опыты, эксперименты' + '\n' +
             '2) Писать стихи, сочинять музыку или рисовать' + '\n' +
             '3) Тренироваться', null, INCLINATION_BUTTONS);
-        arr[7] = parseInt(ctx.message.body);
+        arr[7] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -92,7 +92,7 @@ const inclination = new Scene('inclination',
             '1) Возможность знакомства с историей и культурой другой страны' + '\n' +
             '2) Экстремальный туризм (альпинизм, виндсерфинг, горные лыжи)' + '\n' +
             '3) Деловое общение', null, INCLINATION_BUTTONS);
-        arr[8] = parseInt(ctx.message.body);
+        arr[8] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -100,7 +100,7 @@ const inclination = new Scene('inclination',
             '1) Человеческих взаимоотношениях' + '\n' +
             '2) Новой научной гипотезе' + '\n' +
             '3) Технических характеристиках новой модели машины, компьютера', null, INCLINATION_BUTTONS);
-        arr[9] = parseInt(ctx.message.body);
+        arr[9] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -108,7 +108,7 @@ const inclination = new Scene('inclination',
             '1) Технический' + '\n' +
             '2) Музыкальный' + '\n' +
             '3) Спортивный', null, INCLINATION_BUTTONS);
-        arr[10] = parseInt(ctx.message.body);
+        arr[10] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -116,7 +116,7 @@ const inclination = new Scene('inclination',
             '1) Улучшение взаимопонимания между учителями и учениками' + '\n' +
             '2) Поддержание здоровья учащихся, занятия спортом' + '\n' +
             '3) Укрепление дисциплины', null, INCLINATION_BUTTONS);
-        arr[11] = parseInt(ctx.message.body);
+        arr[11] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -124,7 +124,7 @@ const inclination = new Scene('inclination',
             '1) Научно-популярные фильмы' + '\n' +
             '2) Программы о культуре и искусстве' + '\n' +
             '3) Спортивные программы', null, INCLINATION_BUTTONS);
-        arr[12] = parseInt(ctx.message.body);
+        arr[12] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -132,7 +132,7 @@ const inclination = new Scene('inclination',
             '1) С детьми или сверстниками' + '\n' +
             '2) С машинами, механизмами' + '\n' +
             '3) С объектами природы', null, INCLINATION_BUTTONS);
-        arr[13] = parseInt(ctx.message.body);
+        arr[13] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -140,7 +140,7 @@ const inclination = new Scene('inclination',
             '1) Учить общению с другими людьми' + '\n' +
             '2) Давать знания' + '\n' +
             '3) Обучать навыкам работы', null, INCLINATION_BUTTONS);
-        arr[14] = parseInt(ctx.message.body);
+        arr[14] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -148,7 +148,7 @@ const inclination = new Scene('inclination',
             '1) Иметь возможность заниматься творчеством' + '\n' +
             '2) Вести здоровый образ жизни' + '\n' +
             '3) Тщательно планировать свои дела', null, INCLINATION_BUTTONS);
-        arr[15] = parseInt(ctx.message.body);
+        arr[15] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -156,7 +156,7 @@ const inclination = new Scene('inclination',
             '1) Защите интересов и прав граждан' + '\n' +
             '2) Достижениях в области науки и техники' + '\n' +
             '3) Материальном благополучии граждан', null, INCLINATION_BUTTONS);
-        arr[16] = parseInt(ctx.message.body);
+        arr[16] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -164,7 +164,7 @@ const inclination = new Scene('inclination',
             '1) Труда' + '\n' +
             '2) Физкультуры' + '\n' +
             '3) Математики', null, INCLINATION_BUTTONS);
-        arr[17] = parseInt(ctx.message.body);
+        arr[17] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -172,7 +172,7 @@ const inclination = new Scene('inclination',
             '1) Заниматься сбытом товаров' + '\n' +
             '2) Изготавливать изделия' + '\n' +
             '3) Планировать производство товаров', null, INCLINATION_BUTTONS);
-        arr[18] = parseInt(ctx.message.body);
+        arr[18] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -180,7 +180,7 @@ const inclination = new Scene('inclination',
             '1) Выдающихся ученых и их открытиях' + '\n' +
             '2) Интересных изобретениях' + '\n' +
             '3) Жизни и творчестве писателей, художников, музыкантов', null, INCLINATION_BUTTONS);
-        arr[19] = parseInt(ctx.message.body);
+        arr[19] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -188,7 +188,7 @@ const inclination = new Scene('inclination',
             '1) Читать, думать, рассуждать' + '\n' +
             '2) Что-нибудь мастерить, шить, ухаживать за животными, растениями' + '\n' +
             '3) Ходить на выставки, концерты, в музеи', null, INCLINATION_BUTTONS);
-        arr[20] = parseInt(ctx.message.body);
+        arr[20] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -196,7 +196,7 @@ const inclination = new Scene('inclination',
             '1) Научном открытии' + '\n' +
             '2) Художественной выставке' + '\n' +
             '3) Экономической ситуации', null, INCLINATION_BUTTONS);
-        arr[21] = parseInt(ctx.message.body);
+        arr[21] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
@@ -204,16 +204,16 @@ const inclination = new Scene('inclination',
             '1) В помещении, где много людей' + '\n' +
             '2) В необычных условиях' + '\n' +
             '3) В обычном кабинете', null, INCLINATION_BUTTONS);
-        arr[22] = parseInt(ctx.message.body);
+        arr[22] = parseInt(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.leave();
-        arr[23] = parseInt(ctx.message.body);
+        arr[23] = parseInt(ctx.message.text);
         var arr_res = checkInclination(...arr);
         var max = Math.max(...arr_res);
         var inclinations = determineInclination(max, ...arr_res);
         var type = detInclination(...arr_res);
-        updateTemper(ctx.message.user_id, 'inclination', type, max);
+        updateTemper(ctx.message.from_id, 'inclination', type, max);
         ctx.reply('Ваш результат:' + '\n' +
             + '\n' + inclinations + '\n' +
             '\n' +

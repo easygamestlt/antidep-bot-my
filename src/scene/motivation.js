@@ -29,7 +29,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №3:' + '\n' + 'Когда я работаю, это выглядит так, ' +
             'будто я все ставлю на карту.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -38,7 +38,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №4:' + '\n' + 'Когда возникает проблемная ситуация, ' +
             'я чаще всего принимаю решение одним из последних.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -46,7 +46,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №5:' + '\n' + 'Когда у меня 2 дня подряд нет дела, я теряю покой.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -54,7 +54,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №6:' + '\n' + 'В некоторые дни, мои успехи ниже средних.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -62,7 +62,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №7:' + '\n' + 'По отношению к себе я более строг, чем по отношению к другим.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -70,7 +70,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №8:' + '\n' + 'Я более доброжелателен, чем другие.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -79,7 +79,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №9:' + '\n' + 'Когда я отказываюсь от трудного задания, ' +
             'я потом сурово осуждаю себя, так как знаю, что в нем я бы добился успеха.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -87,7 +87,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №10:' + '\n' + 'В процессе работы я нуждаюсь в небольших паузах для отдыха.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -95,7 +95,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №11:' + '\n' + 'Усердие – это не основная моя черта.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -116,7 +116,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №15:' + '\n' + 'Я знаю, что мои коллеги считают меня полезным для дела человеком.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -124,7 +124,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №16:' + '\n' + 'Препятствия делают мои решения более твердыми.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -132,7 +132,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №17:' + '\n' + 'У меня легко вызвать чувство тщеславия.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -140,7 +140,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №18:' + '\n' + 'Когда я работаю без вдохновения, это обычно заметно.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -148,7 +148,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №19:' + '\n' + 'При выполнении работы я не рассчитываю на помощь других.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -156,7 +156,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №20:' + '\n' + 'Иногда я откладываю то, что могу сделать прямо сейчас.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -164,7 +164,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №21:' + '\n' + 'Нужно полагаться только на самого себя.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -172,7 +172,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №22:' + '\n' + 'В жизни мало вещей, более важных, чем деньги.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -181,7 +181,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №23:' + '\n' + 'Всегда, когда мне предстоит выполнить ' +
             'важное задание, я ни о чем другом не думаю.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -193,7 +193,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №25:' + '\n' + 'В конце отпуска я обычно радуюсь, что скоро выйду на работу.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -202,7 +202,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №26:' + '\n' + 'Когда я расположен к работе, ' +
             'я делаю ее лучше и квалифицированней, чем другие.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -211,7 +211,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №27:' + '\n' + 'Мне проще и легче общаться с людьми, ' +
             'которые могут упорно работать.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -219,7 +219,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №28:' + '\n' + 'Когда у меня нет дел, я чувствую, что мне не по себе.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -228,7 +228,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №29:' + '\n' + 'Мне приходится выполнять ответственную ' +
             'работу чаще, чем другим.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -237,7 +237,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №30:' + '\n' + 'Когда мне приходится принимать решение, ' +
             'я стараюсь делать это как можно лучше.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -245,7 +245,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №31:' + '\n' + 'Мои друзья иногда считают меня ленивым.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -253,7 +253,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №32:' + '\n' + 'Мои успехи в какой-то мере зависят от моих коллег.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -261,7 +261,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №33:' + '\n' + 'Бессмысленно противодействовать воле руководителя.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -282,7 +282,7 @@ const motivation = new Scene('motivation',
         ctx.scene.next();
         ctx.reply('Вопрос №37:' + '\n' + 'Когда я работаю вместе с другими, ' +
             'моя работа дает большие результаты, чем работы других.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -290,7 +290,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №38:' + '\n' + 'Многое, за что я берусь, я не довожу до конца.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
@@ -298,7 +298,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №39:' + '\n' + 'Я завидую людям, которые не загружены работой.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -306,7 +306,7 @@ const motivation = new Scene('motivation',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №40:' + '\n' + 'Я не завидую тем, кто стремится к власти и положению.', null, YES_NO_BUTTONS);
-        if (ctx.message.body === 'Нет' || ctx.message.body === 'нет') {
+        if (ctx.message.text === 'Нет' || ctx.message.text === 'нет') {
             counter += 1;
         }
 
@@ -318,13 +318,13 @@ const motivation = new Scene('motivation',
     },
     (ctx) => {
         ctx.scene.leave();
-        if (ctx.message.body === 'Да' || ctx.message.body === 'да') {
+        if (ctx.message.text === 'Да' || ctx.message.text === 'да') {
             counter += 1;
         }
 
         var choice = checkMotiv(counter);
         var sanity = determineSanity('motivation', choice);
-        updateResult(ctx.message.user_id, 'motivation', counter, sanity);
+        updateResult(ctx.message.from_id, 'motivation', counter, sanity);
         ctx.reply('Вы набрали: ' + counter + '\n' +
         checkChoice(5, choice) + '\n' +
             '\n' +

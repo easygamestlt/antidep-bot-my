@@ -14,37 +14,37 @@ const newAnketa = new Scene('newAnketa',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите почту: ', null, null);
-        fullname = ctx.message.body;
+        fullname = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите номер телефона:');
-        mail = ctx.message.body;
+        mail = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите регион проживания: ');
-        phone = ctx.message.body;
+        phone = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите место работы или учебы: ');
-        region = ctx.message.body;
+        region = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите должность/специальность обучения: ');
-        workandstudies = ctx.message.body;
+        workandstudies = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Укажите свой статус: медик, волонтер-медик, психолог-волонтер');
-        position = ctx.message.body;
+        position = ctx.message.text;
     },
     (ctx) => {
         ctx.scene.leave();
-        status = ctx.message.body;
-        createAnketa(ctx.message.user_id, fullname, phone, mail, workandstudies, region, position, status);
+        status = ctx.message.text;
+        createAnketa(ctx.message.from_id, fullname, phone, mail, workandstudies, region, position, status);
         ctx.reply('Спасибо за регистрацию в анкете!', null, AGREEMENT_BUTTONS);
     }
 );

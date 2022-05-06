@@ -28,124 +28,124 @@ const anxienty1 = new Scene('anxiety1',
         ctx.scene.next();
         ctx.reply('Вопрос №2:' + '\n' + 'Мне ничто не угрожает', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №3:' + '\n' + 'Я нахожусь в напряжении', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №4:' + '\n' + 'Я испытываю сожаление', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №5:' + '\n' + 'Я чувствую себя свободно', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №6:' + '\n' + 'Я расстроен', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №7:' + '\n' + 'Меня волнуют возможные неудачи', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №8:' + '\n' + 'Я чувствую себя отдохнувшим', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №9:' + '\n' + 'Я встревожен', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №10:' + '\n' + 'Я испытываю чувство внутреннего удовлетворения', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №11:' + '\n' + 'Я уверен в себе', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №12:' + '\n' + 'Я нервничаю', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №13:' + '\n' + 'Я не нахожу себе места', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №14:' + '\n' + 'Я взвинчен', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №15:' + '\n' + 'Я не чувствую скованности', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №16:' + '\n' + 'Я доволен', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №17:' + '\n' + 'Я озабочен', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №18:' + '\n' + 'Я слишком возбужден и мне не по себе', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №19:' + '\n' + 'Мне радостно', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_direct += determineAnxietyResponse(ctx.message.body);
+        counter_direct += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №20:' + '\n' + 'Мне приятно', null, INSIDE_ANXIETY_BUTTONS
         );
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
     },
     (ctx) => {
         ctx.scene.leave();
-        counter_reverse += determineAnxietyResponse(ctx.message.body);
+        counter_reverse += determineAnxietyResponse(ctx.message.text);
         var result = counter_direct - counter_reverse + 50;
         var choice = checkAnxiety(result);
         var sanity = determineSanity('anxiety1', choice);
         let checkedRes = checkChoice(2, choice)
-        updateResult(ctx.message.user_id, 'anxiety1', result, sanity);
+        updateResult(ctx.message.from_id, 'anxiety1', result, sanity);
         ctx.reply('Вы набрали: ' + result + "\n" + checkedRes + "\n" +
             'Рекомендуем к просмотру видео "Прогрессивная мышечная релаксация по Э. Джекобсону": video-192832710_456239034' +
             "\n" +

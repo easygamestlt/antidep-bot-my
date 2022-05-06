@@ -23,7 +23,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №2:' + '\n' + 'Ограничиваете ли Вы себя в употреблении животных жиров?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 3;
         }
 
@@ -31,7 +31,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №3:' + '\n' + 'Регулярно ли Вы едите волокнистую пищу, хлеб грубого помола или из отрубей?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 5;
         }
 
@@ -39,7 +39,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №4:' + '\n' + 'Ограничиваете ли Вы себя в употреблении сахара?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 2;
         }
 
@@ -47,7 +47,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №5:' + '\n' + 'Умеете ли Вы отдыхать и расслабляться?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 3;
         }
 
@@ -55,7 +55,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №6:' + '\n' + 'Есть ли у Вас развлечения, помимо работы?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 5;
         }
 
@@ -63,7 +63,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №7:' + '\n' + 'Нравится ли Вам Ваша работа?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 4;
         }
 
@@ -71,7 +71,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №8:' + '\n' + 'Есть ли у Вас друг, которому Вы полностью доверяете?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 4;
         }
 
@@ -79,7 +79,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №9:' + '\n' + 'Есть ли у Вас любимый человек?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 3;
         }
 
@@ -87,7 +87,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №10:' + '\n' + 'Считаете ли Вы, что должны быть более ответственны на работе?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 4;
         }
 
@@ -95,7 +95,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №11:' + '\n' + 'Вы считаете, что должны брать на себя меньше обязательств?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 2;
         }
 
@@ -103,7 +103,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №12:' + '\n' + 'Часто ли Вы испытываете скуку?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 2;
         }
 
@@ -111,7 +111,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №13:' + '\n' + 'Вы курите?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 2;
         }
 
@@ -119,7 +119,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №14:' + '\n' + 'Вы курите меньше полпачки в день?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 6;
         }
 
@@ -130,7 +130,7 @@ const lifestyle = new Scene('lifestyle',
             'Введите 1, если не употребляете' + '\n' +
             'Введите 2, если употребляете иногда' + '\n' +
             'Введите 3, если употребляете каждый день');
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 2;
         }
 
@@ -142,9 +142,9 @@ const lifestyle = new Scene('lifestyle',
             'Введите 2, если ваш вес выше нормы не более, чем на 6 кг' + '\n' +
             'Введите 3, если ваш вес выше нормы не менее, чем на 6 кг и менее, чем на 12 кг' + '\n' +
             'Введите 4, если ваш вес выше нормы на более, чем 12 кг');
-        if (ctx.message.body == '1') {
+        if (ctx.message.text == '1') {
             counter += 3;
-        } else if (ctx.message.body == '2') {
+        } else if (ctx.message.text == '2') {
             counter += 2;
         }
 
@@ -152,18 +152,18 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №17:' + '\n' + 'Регулярно ли Вы делаете зарядку?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == '1') {
+        if (ctx.message.text == '1') {
             counter += 5;
-        } else if (ctx.message.body == '2') {
+        } else if (ctx.message.text == '2') {
             counter += 4;
-        } else if (ctx.message.body == '3') {
+        } else if (ctx.message.text == '3') {
             counter += 2;
         }
     },
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №18:' + '\n' + 'Вы занимаетесь зарядкой, пока не заболят мышцы?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 2;
         }
 
@@ -171,7 +171,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №19:' + '\n' + 'Нужно ли Вам снотворное, чтобы уснуть?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 1;
         }
 
@@ -179,7 +179,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №20:' + '\n' + 'Всегда ли Вы застегиваете ремень безопасности в машине?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 1;
         }
 
@@ -187,7 +187,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №21:' + '\n' + 'Часто ли Вы вынуждены покупать лекарства?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 1;
         }
 
@@ -195,7 +195,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №22:' + '\n' + 'Проверяете ли Вы хоть иногда свое артериальное давление?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 2;
         }
 
@@ -204,7 +204,7 @@ const lifestyle = new Scene('lifestyle',
         ctx.scene.next();
         ctx.reply('Вопрос №23:' + '\n' + 'Бывают ли у Вас постоянные болезненные симптомы и ' +
             'Вы при этом не обращаетесь к врачу?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Да' || ctx.message.body == 'да') {
+        if (ctx.message.text == 'Да' || ctx.message.text == 'да') {
             counter += 1;
         }
 
@@ -212,7 +212,7 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №24:' + '\n' + 'Занимаетесь ли Вы опасными видами спорта?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 5;
         }
 
@@ -220,20 +220,20 @@ const lifestyle = new Scene('lifestyle',
     (ctx) => {
         ctx.scene.next();
         ctx.reply('Вопрос №25:' + '\n' + 'Часто ли Вы беспокоитесь или волнуетесь?', null, YES_NO_BUTTONS);
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 3;
         }
 
     },
     (ctx) => {
         ctx.scene.leave();
-        if (ctx.message.body == 'Нет' || ctx.message.body == 'нет') {
+        if (ctx.message.text == 'Нет' || ctx.message.text == 'нет') {
             counter += 5;
         }
 
         var choice = checkLifeStyle(counter);
         var sanity = determineSanity('lifestyle', choice);
-        updateResult(ctx.message.user_id, 'lifestyle', counter, sanity);
+        updateResult(ctx.message.from_id, 'lifestyle', counter, sanity);
         ctx.reply('Вы набрали: ' + counter + '\n' +
         checkChoice(10, choice) + '\n' +
             '\n' +

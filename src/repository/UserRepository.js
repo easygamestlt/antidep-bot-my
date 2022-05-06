@@ -1,29 +1,21 @@
 const User = require('../models/User');
 
-function createUser(userId, sex, age, eduLevel, maritalStatus, socialStatus, approval) {
-    var user = new User(
-        {
-            vk_id: userId, 
-            sex: sex, 
-            age: age, 
-            eduLevel: eduLevel,
-            maritalStatus: maritalStatus,
-            socialStatus: socialStatus,
-            approval: approval
-        });
-    User.exists({vk_id: userId}, function (err, data) {
-        if (err) { console.log(err); }
-        else {
-            if (data == false) {
-                user.save(function (err) {
-                    if (err) { console.log(err); }
-                    else console.log('user was saved');
-                });
-            }
-            else console.log('user has already been added');
-        }
+const firebaseapp = require("../../main.js");
+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+
+const db = getFirestore(firebaseapp[0]);
+const usersCollectionRef = db.collection('users');
+
+function createUser(userId, sex, age, eduLevel, maritalStatus, socialStatus, approval){
+    usersCollectionRef.doc(String(userId)).set({
+        sex: sex, 
+        age: age, 
+        eduLevel: eduLevel,
+        maritalStatus: maritalStatus,
+        socialStatus: socialStatus,
+        approval: approval
     });
-};
+}
 
 module.exports = {
     createUser

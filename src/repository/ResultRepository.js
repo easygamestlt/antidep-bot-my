@@ -77,107 +77,45 @@ function createResult(userId) {
         }
     });
 };
+const firebaseapp = require("../../main.js");
+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
 
-function updateResult(vk_id, testType, score, sanity) {
-    var filter = { vk_id: vk_id };
-    var result = Result.findOne(filter, function(err, res) {
-        switch(testType) {
-            case 'depression':
-                res.results.depression = { date: formatDate(), score: score, sane: sanity };
-                break;
-            case 'stress':
-                res.results.stress = { date: formatDate(), score: score, sane: sanity };
-                break;
-            case 'anxiety1':
-                res.results.anxiety1 = { date: formatDate(), score: score, sane: sanity };
-                break;
-            case 'anxiety2':
-                res.results.anxiety2 = { date: formatDate(), score: score, sane: sanity };
-                break;
-            case 'motivation':
-                res.results.motivation = { date: formatDate(), score: score, sane: sanity };
-                break;
-            case 'aggression':
-                res.results.aggression = { date: formatDate(), score: score, sane: sanity };
-            case 'lifestyle':
-                res.results.lifestyle = { date: formatDate(), score: score, sane: sanity };    
-    }
-        if (err) { console.log(err) }
-        else {
-            result.updateOne(filter, {$set: {results: res.results}}, function(err) {
-                if (err) throw err;
-                else 
-                    console.log('result object was updated');
-                    console.log('added data about ' + testType);
-            });
-        }
+const db = getFirestore(firebaseapp[0]);
+const resultCollectionRef = db.collection('result');
+
+function updateResult(user_id, testType, score, sanity){
+    resultCollectionRef.doc(String(user_id)).collection('first_kit_test').doc(String(testType)).set({
+        date: formatDate(),
+        score: score,
+        sane: sanity
     });
 };
 
-function updateBurnout(vk_id, exhaustion, reduction, deperson, total) {
-    var filter = { vk_id: vk_id };
-    var result = Result.findOne(filter, function(err, res) {
-        res.results.burnout = { 
-            date: formatDate(), 
-            exhaustion: exhaustion,
-            reduction: reduction,
-            depersonalization: deperson,
-            total: total
-        }
-        if (err) { console.log(err) }
-        else {
-            result.updateOne(filter, {$set: {results: res.results}}, function(err) {
-                if (err) throw err;
-                else 
-                    console.log('result object was updated');
-                    console.log('added data about burnout');
-            });
-        }
+function updateBurnout(user_id, exhaustion, reduction, deperson, total){
+    resultCollectionRef.doc(String(user_id)).collection('burnout').doc('result').set({
+        date: formatDate(), 
+        exhaustion: exhaustion,
+        reduction: reduction,
+        depersonalization: deperson,
+        total: total
     });
 };
 
-function updateTemper(vk_id, testType, kind, score) {
-    var filter = { vk_id: vk_id };
-    var result = Result.findOne(filter, function(err, res) {
-        switch(testType) {
-            case 'inclination':
-                res.results.inclination = { date: formatDate(), score: score, kind: kind };
-                break;
-            case 'temper':
-                res.results.temper = { date: formatDate(), score: score, kind: kind };
-                break;
-        }
-        if (err) { console.log(err) }
-        else {
-            result.updateOne(filter, {$set: {results: res.results}}, function(err) {
-                if (err) throw err;
-                else 
-                    console.log('result object was updated');
-                    console.log('added data about ' + testType);
-            });
-        }
+function updateTemper(user_id, testType, kind, score){
+    resultCollectionRef.doc(String(user_id)).collection('second_kit_test').doc(String(testType)).set({
+        date: formatDate(),
+        score: score,
+        kind: kind
     });
 };
 
-function updateEysenck(vk_id, kind, neuroticism, lie) {
-    var filter = { vk_id: vk_id };
-    var result = Result.findOne(filter, function(err, res) {
-        res.results.eysenck = { 
-            date: formatDate(), 
-            kind: kind,
-            neuroticism: neuroticism,
-            lie: lie
-        }
-        if (err) { console.log(err) }
-        else {
-            result.updateOne(filter, {$set: {results: res.results}}, function(err) {
-                if (err) throw err;
-                else 
-                    console.log('result object was updated');
-                    console.log('added data about eysenck test');
-            });
-        }
-    });
+function updateEysenck(user_id, kind, neuroticism, lie){
+    resultCollectionRef.doc(String(user_id)).collection('eysenck').doc('result').set({
+        date: formatDate(), 
+        kind: kind,
+        neuroticism: neuroticism,
+        lie: lie
+    }); 
 };
 
 module.exports = {
